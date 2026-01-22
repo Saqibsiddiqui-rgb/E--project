@@ -3,828 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SchoolsInfo - Find the Perfect School for Your Child</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Schools-info</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .nav-link:hover { color: #3b82f6; }
-        #map { height: 500px; width: 100%; border-radius: 12px; }
-        .facility-badge { transition: all 0.3s ease; }
-        .facility-badge:hover { transform: scale(1.05); }
-        .modal { display: none; }
-        .modal.active { display: flex; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fadeIn { animation: fadeIn 0.5s ease forwards; }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="bg-blue-600 p-2 rounded-lg">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+<body>
+                                            <!--Navigation bar start-->
+        <div class="nav">
+            <div class="m-nav">
+                <div class="logo" data-aos="fade-down" data-aos-duration="900" data-aos-delay="300">
+                    <img src="logo.png" class="logo-img">
+                </div>
+                    <div class="nav-links" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="schools.html">Schools</a>
+                            <a href="search.html">Search</a>
+                            <a href="map.html">Site Map</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
                     </div>
-                    <span class="text-2xl font-bold text-gray-800">Schools<span class="text-blue-600">Info</span></span>
                 </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 font-medium transition">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 font-medium transition">About</a>
-                    <a href="#schools" class="nav-link text-gray-700 font-medium transition">Schools</a>
-                    <a href="#search" class="nav-link text-gray-700 font-medium transition">Search</a>
-                    <a href="#sitemap" class="nav-link text-gray-700 font-medium transition">Site Map</a>
-                    <a href="#contact" class="nav-link text-gray-700 font-medium transition">Contact</a>
+            </div>
+        </div>                                  <!--Navigation bar End-->
+        <div class="gap"></div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 850px; ">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" style="height: 850px;">
+    <div class="carousel-item active" style="height: 850px;">
+      <img src="sch-img-sch1.jpg" class="d-block w-100" alt="..." style="height: 850px;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="book.img.jpg" class="d-block w-100" alt="..." style="height: 850px;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="sch-img-sch.jpg" class="d-block w-100" alt="..." style="height: 850px;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    <div class="gap"></div>
+        <div class="hero-m">
+            <div class="hero-c">
+                <div class="con-1">
+                    <h1  data-aos="zoom-in" data-aos-duration="900" data-aos-delay="300">Find the Perfect School<br>
+                        for your Child</h1>
+                        <p class="p1"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">Discover top schools in your city with detailed information about</p>
+                        <p class="p2"  data-aos="fade-left" data-aos-duration="1300" data-aos-delay="300">facilities, location, and addmission details - all in one place.</p>
+                        <a href="search.html" class="link-1"  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300"><i class="fas fa-search mr-2 explore-icon"></i>Explore Schools</a>
+                        <a href="map.html" class="link-2"  data-aos="fade-left" data-aos-duration="1700" data-aos-delay="300"><i class="fas fa-map-marker-alt mr-2 map-icon"></i>View Map</a>
+                    <div class="info"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="info-d-1">
+                            <p class="p3">50+</p>
+                            <p class="p.3">Schools Listed</p>
+                        </div>
+                        <div class="info-d-2">
+                            <p class="p3">10K+</p>
+                            <p class="p.3">Happy Parents</p>
+                        </div>
+                        <div class="info-d-3">
+                            <p class="p3">15+</p>
+                            <p class="p.3">Areas Coverd</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <div class="con-2">
+                    <div class="img-d1">
+                        <img src="con-1-img-1.jpg" alt="" class="con-2-img1"  data-aos="fade-down" data-aos-duration="700" data-aos-delay="300">
+                        <img src="con-1-img-2.jpg" alt="" class="con-2-img2"  data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                    </div>
+                    <div class="img-d2">
+                        <img src="con-1-img-3.jpg" alt="" class="con-2-img3"  data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+                        <img src="con-1-img-4.jpg" alt="" class="con-2-img4"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#home" class="block text-gray-700 font-medium py-2">Home</a>
-                <a href="#about" class="block text-gray-700 font-medium py-2">About</a>
-                <a href="#schools" class="block text-gray-700 font-medium py-2">Schools</a>
-                <a href="#search" class="block text-gray-700 font-medium py-2">Search</a>
-                <a href="#sitemap" class="block text-gray-700 font-medium py-2">Site Map</a>
-                <a href="#contact" class="block text-gray-700 font-medium py-2">Contact</a>
-            </div>
-        </div>
-    </nav>
+    </main>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient pt-24 pb-16 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto px-4 w-full">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white animate-fadeIn">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find the Perfect School for Your Child</h1>
-                    <p class="text-xl text-blue-100 mb-8">Discover top schools in your city with detailed information about facilities, location, and admission details - all in one place.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#schools" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition shadow-lg">
-                            <i class="fas fa-search mr-2"></i>Explore Schools
-                        </a>
-                        <a href="#sitemap" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">
-                            <i class="fas fa-map-marker-alt mr-2"></i>View Map
-                        </a>
-                    </div>
-                    <div class="mt-12 grid grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">50+</div>
-                            <div class="text-blue-200">Schools Listed</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">10K+</div>
-                            <div class="text-blue-200">Happy Parents</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold">15+</div>
-                            <div class="text-blue-200">Areas Covered</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=300&fit=crop" alt="School Building" class="rounded-2xl shadow-2xl w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop" alt="Students Learning" class="rounded-2xl shadow-2xl w-full h-48 object-cover mt-8">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop" alt="Library" class="rounded-2xl shadow-2xl w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=300&fit=crop" alt="Sports" class="rounded-2xl shadow-2xl w-full h-48 object-cover mt-8">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">About SchoolsInfo</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Your one-stop destination to find comprehensive information about schools in your city</p>
+    <div class="h-cards">
+        <h1 class="text-center text-secondary">Our Facilities</h1>
+        <div class="h-cards-d">
+            <div class="card h-card" style="width:400px" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300">
+                <div class="card-body">
+                    <h4 class="card-title text-primary text-center">Register Online</h4>
+                        <p class="card-text text-center">A quick and easy process</p>
+                            <div class="h-link-d"><a href="form.html" class="h-cards-link">Go to register   <i class="fa-solid fa-angle-right"></i></a></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-8 rounded-2xl bg-blue-50 card-hover transition duration-300">
-                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-search text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Easy Search</h3>
-                    <p class="text-gray-600">Search schools by location, facilities, and other criteria to find the perfect match for your child.</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-purple-50 card-hover transition duration-300">
-                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-info-circle text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Detailed Info</h3>
-                    <p class="text-gray-600">Get comprehensive details about intake capacity, library, canteen, boarding, and sports facilities.</p>
-                </div>
-                <div class="text-center p-8 rounded-2xl bg-green-50 card-hover transition duration-300">
-                    <div class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-map-marked-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Location Map</h3>
-                    <p class="text-gray-600">View exact school locations on interactive maps using GeoLocation technology.</p>
-                </div>
+                <img class="card-img-bottom" src="h-crad-img-1.jpg" alt="Card image" style="width:100%; height:250px;">
             </div>
-        </div>
-    </section>
 
-    <!-- Search Section -->
-    <section id="search" class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white mb-4">Search Schools</h2>
-                <p class="text-xl text-blue-100">Find schools based on location and facilities</p>
+            <div class="card" style="width:400px" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <div class="card-body">
+                    <h4 class="card-title text-primary text-center">Find a School</h4>
+                        <p class="card-text text-center">Explore our campuses across Pakistan</p>
+                            <div class="h-link-d"><a href="schools.html" class="h-cards-link">Go to find   <i class="fa-solid fa-angle-right"></i></a></div>
             </div>
-            <div class="bg-white rounded-2xl p-8 shadow-2xl">
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Location</label>
-                        <select id="searchLocation" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <option value="">All Locations</option>
-                            <option value="Downtown">Downtown</option>
-                            <option value="Westside">Westside</option>
-                            <option value="Eastside">Eastside</option>
-                            <option value="Northside">Northside</option>
-                            <option value="Southside">Southside</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">Facilities</label>
-                        <select id="searchFacility" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <option value="">All Facilities</option>
-                            <option value="library">Library</option>
-                            <option value="canteen">Canteen</option>
-                            <option value="boarding">Boarding</option>
-                            <option value="sports">Sports Complex</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold mb-2">School Type</label>
-                        <select id="searchType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <option value="">All Types</option>
-                            <option value="CBSE">CBSE</option>
-                            <option value="ICSE">ICSE</option>
-                            <option value="State Board">State Board</option>
-                            <option value="International">International</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button onclick="searchSchools()" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                            <i class="fas fa-search mr-2"></i>Search
-                        </button>
-                    </div>
+                <img class="card-img-bottom" src="h-card-img-2.jpeg" alt="Card image" style="width:100%; height:250px;">
+            </div>
+
+            <div class="card" style="width:400px; height:400px;" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
+                <div class="card-body">
+                    <h4 class="card-title text-primary text-center">Pay fee online</h4>
+                        <p class="card-text text-center">Fee Payment through debit/credit cards</p>
+                            <p></p>
                 </div>
-                <div class="mt-6">
-                    <label class="block text-gray-700 font-semibold mb-2">Quick Filters</label>
-                    <div class="flex flex-wrap gap-3">
-                        <button onclick="filterByFacility('library')" class="facility-badge bg-blue-100 text-blue-700 px-4 py-2 rounded-full hover:bg-blue-200">
-                            <i class="fas fa-book mr-2"></i>Library
-                        </button>
-                        <button onclick="filterByFacility('canteen')" class="facility-badge bg-green-100 text-green-700 px-4 py-2 rounded-full hover:bg-green-200">
-                            <i class="fas fa-utensils mr-2"></i>Canteen
-                        </button>
-                        <button onclick="filterByFacility('boarding')" class="facility-badge bg-purple-100 text-purple-700 px-4 py-2 rounded-full hover:bg-purple-200">
-                            <i class="fas fa-bed mr-2"></i>Boarding
-                        </button>
-                        <button onclick="filterByFacility('sports')" class="facility-badge bg-orange-100 text-orange-700 px-4 py-2 rounded-full hover:bg-orange-200">
-                            <i class="fas fa-football-ball mr-2"></i>Sports
-                        </button>
-                        <button onclick="resetFilters()" class="facility-badge bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-200">
-                            <i class="fas fa-times mr-2"></i>Reset
-                        </button>
-                    </div>
-                </div>
+                <img class="card-img-bottom" src="h-card-img-3.jpg" alt="Card image" style="width:100%; height:250px;">
             </div>
-        </div>
-    </section>
-
-    <!-- Schools Section -->
-    <section id="schools" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Listed Schools</h2>
-                <p class="text-xl text-gray-600">Explore detailed information about each school</p>
-            </div>
-            <div id="schoolsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Schools will be dynamically inserted here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Site Map Section with GeoLocation -->
-    <section id="sitemap" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Site Map - School Locations</h2>
-                <p class="text-xl text-gray-600">View all schools on the interactive map</p>
-            </div>
-            <div class="bg-gray-100 rounded-2xl p-4 shadow-lg">
-                <div id="map"></div>
-            </div>
-            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="schoolListMap">
-                <!-- School list for map will be inserted here -->
-            </div>
-            <div class="mt-8 text-center">
-                <button onclick="getCurrentLocation()" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
-                    <i class="fas fa-location-arrow mr-2"></i>Find Schools Near Me
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-white mb-4">Contact Us</h2>
-                <p class="text-xl text-gray-400">Have questions? Reach out to us!</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-gray-700 rounded-2xl p-8">
-                    <form id="contactForm">
-                        <div class="mb-6">
-                            <label class="block text-white font-semibold mb-2">Name</label>
-                            <input type="text" class="w-full p-3 rounded-lg bg-gray-600 text-white border border-gray-500 focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-white font-semibold mb-2">Email</label>
-                            <input type="email" class="w-full p-3 rounded-lg bg-gray-600 text-white border border-gray-500 focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-white font-semibold mb-2">Message</label>
-                            <textarea rows="4" class="w-full p-3 rounded-lg bg-gray-600 text-white border border-gray-500 focus:ring-2 focus:ring-blue-500" placeholder="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
-                        </button>
-                    </form>
-                </div>
-                <div class="text-white">
-                    <h3 class="text-2xl font-bold mb-6">Quick Links - Site Navigation</h3>
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <a href="#home" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-home mr-3"></i>Home
-                        </a>
-                        <a href="#about" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-info-circle mr-3"></i>About
-                        </a>
-                        <a href="#schools" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-school mr-3"></i>Schools
-                        </a>
-                        <a href="#search" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-search mr-3"></i>Search
-                        </a>
-                        <a href="#sitemap" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-map mr-3"></i>Site Map
-                        </a>
-                        <a href="#contact" class="flex items-center text-gray-300 hover:text-blue-400 transition">
-                            <i class="fas fa-envelope mr-3"></i>Contact
-                        </a>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-blue-400 text-xl w-8"></i>
-                            <span class="text-gray-300">123 Education Street, City Center</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-blue-400 text-xl w-8"></i>
-                            <span class="text-gray-300">+1 234 567 8900</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-blue-400 text-xl w-8"></i>
-                            <span class="text-gray-300">info@schoolsinfo.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-400">&copy; 2024 SchoolsInfo. All rights reserved. | Developed for Educational Purposes</p>
-        </div>
-    </footer>
-
-    <!-- School Detail Modal -->
-    <div id="schoolModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div id="modalContent" class="p-8">
-                <!-- Modal content will be inserted here -->
-            </div>
+            
         </div>
     </div>
 
-    <script>
-        // School Data
-        const schools = [
-            {
-                id: 1,
-                name: "St. Mary's International School",
-                type: "ICSE",
-                location: "Downtown",
-                address: "123 Main Street, Downtown",
-                lat: 40.7128,
-                lng: -74.0060,
-                image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
-                intake: 1500,
-                library: true,
-                canteen: true,
-                boarding: true,
-                sports: ["Cricket", "Football", "Basketball", "Swimming", "Tennis"],
-                description: "St. Mary's International School is one of the premier educational institutions in the city, offering world-class education with modern facilities.",
-                established: 1985,
-                rating: 4.8
-            },
-            {
-                id: 2,
-                name: "Delhi Public School",
-                type: "CBSE",
-                location: "Westside",
-                address: "456 Oak Avenue, Westside",
-                lat: 40.7580,
-                lng: -73.9855,
-                image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop",
-                intake: 2000,
-                library: true,
-                canteen: true,
-                boarding: false,
-                sports: ["Cricket", "Football", "Athletics", "Badminton"],
-                description: "Delhi Public School provides quality education following CBSE curriculum with emphasis on holistic development.",
-                established: 1992,
-                rating: 4.6
-            },
-            {
-                id: 3,
-                name: "Greenwood High School",
-                type: "State Board",
-                location: "Eastside",
-                address: "789 Pine Road, Eastside",
-                lat: 40.7282,
-                lng: -73.7949,
-                image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop",
-                intake: 1200,
-                library: true,
-                canteen: true,
-                boarding: true,
-                sports: ["Football", "Volleyball", "Table Tennis", "Chess"],
-                description: "Greenwood High School focuses on providing affordable quality education with excellent sports facilities.",
-                established: 1998,
-                rating: 4.4
-            },
-            {
-                id: 4,
-                name: "Cambridge Academy",
-                type: "International",
-                location: "Northside",
-                address: "321 Elm Street, Northside",
-                lat: 40.7831,
-                lng: -73.9712,
-                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
-                intake: 800,
-                library: true,
-                canteen: true,
-                boarding: true,
-                sports: ["Swimming", "Golf", "Tennis", "Hockey", "Rugby"],
-                description: "Cambridge Academy offers international curriculum with world-class infrastructure and global exposure opportunities.",
-                established: 2005,
-                rating: 4.9
-            },
-            {
-                id: 5,
-                name: "Sacred Heart Convent",
-                type: "ICSE",
-                location: "Southside",
-                address: "567 Cedar Lane, Southside",
-                lat: 40.6892,
-                lng: -74.0445,
-                image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=600&h=400&fit=crop",
-                intake: 1000,
-                library: true,
-                canteen: false,
-                boarding: false,
-                sports: ["Basketball", "Volleyball", "Athletics", "Yoga"],
-                description: "Sacred Heart Convent is known for its discipline, academic excellence, and strong moral values education.",
-                established: 1970,
-                rating: 4.5
-            },
-            {
-                id: 6,
-                name: "Modern Public School",
-                type: "CBSE",
-                location: "Downtown",
-                address: "890 Market Street, Downtown",
-                lat: 40.7484,
-                lng: -73.9857,
-                image: "https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=600&h=400&fit=crop",
-                intake: 1800,
-                library: true,
-                canteen: true,
-                boarding: false,
-                sports: ["Cricket", "Football", "Kabaddi", "Kho-Kho"],
-                description: "Modern Public School combines traditional values with modern teaching methodologies for comprehensive education.",
-                established: 2001,
-                rating: 4.3
-            }
-        ];
 
-        let map;
-        let markers = [];
+    <div class="form-btn"><a href="form.html" class="btn-admission">ENROL NOW</a></div>
 
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            renderSchools(schools);
-            initMap();
-            renderSchoolListMap();
-            setupMobileMenu();
-            setupContactForm();
-        });
+    <footer class="">
+        <div class="footer">
+            <p>© 2026 SchoolsInfo. All rights reserved. | Developed for Educational Purposes</p>
+        </div>
+    </footer>
+        
 
-        // Mobile Menu Toggle
-        function setupMobileMenu() {
-            const btn = document.getElementById('mobileMenuBtn');
-            const menu = document.getElementById('mobileMenu');
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-            // Close menu when clicking a link
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                });
-            });
-        }
 
-        // Render Schools Grid
-        function renderSchools(schoolList) {
-            const grid = document.getElementById('schoolsGrid');
-            if (schoolList.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
-                        <p class="text-xl text-gray-500">No schools found matching your criteria.</p>
-                        <button onclick="resetFilters()" class="mt-4 text-blue-600 hover:underline">Reset Filters</button>
-                    </div>
-                `;
-                return;
-            }
-            grid.innerHTML = schoolList.map(school => `
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition duration-300">
-                    <div class="relative">
-                        <img src="${school.image}" alt="${school.name}" class="w-full h-48 object-cover">
-                        <span class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">${school.type}</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">${school.name}</h3>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>${school.address}
-                        </p>
-                        <div class="flex items-center mb-4">
-                            <div class="flex text-yellow-400">
-                                ${getStarRating(school.rating)}
-                            </div>
-                            <span class="ml-2 text-gray-600">${school.rating}/5</span>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            ${school.library ? '<span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs"><i class="fas fa-book mr-1"></i>Library</span>' : ''}
-                            ${school.canteen ? '<span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs"><i class="fas fa-utensils mr-1"></i>Canteen</span>' : ''}
-                            ${school.boarding ? '<span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs"><i class="fas fa-bed mr-1"></i>Boarding</span>' : ''}
-                            <span class="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs"><i class="fas fa-users mr-1"></i>${school.intake} students</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <button onclick="showSchoolDetails(${school.id})" class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
-                                <i class="fas fa-info-circle mr-2"></i>View Details
-                            </button>
-                            <button onclick="focusOnMap(${school.lat}, ${school.lng})" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    
 
-        // Star Rating Helper
-        function getStarRating(rating) {
-            const fullStars = Math.floor(rating);
-            const hasHalf = rating % 1 >= 0.5;
-            let stars = '';
-            for (let i = 0; i < fullStars; i++) {
-                stars += '<i class="fas fa-star"></i>';
-            }
-            if (hasHalf) {
-                stars += '<i class="fas fa-star-half-alt"></i>';
-            }
-            const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
-            for (let i = 0; i < emptyStars; i++) {
-                stars += '<i class="far fa-star"></i>';
-            }
-            return stars;
-        }
-
-        // Initialize Map
-        function initMap() {
-            map = L.map('map').setView([40.7128, -74.0060], 11);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            // Add markers for each school
-            schools.forEach(school => {
-                const marker = L.marker([school.lat, school.lng]).addTo(map);
-                marker.bindPopup(`
-                    <div class="text-center p-2">
-                        <h3 class="font-bold text-lg">${school.name}</h3>
-                        <p class="text-gray-600">${school.address}</p>
-                        <p class="text-sm text-blue-600">${school.type} | Capacity: ${school.intake}</p>
-                        <button onclick="showSchoolDetails(${school.id})" class="mt-2 bg-blue-600 text-white px-4 py-1 rounded text-sm">View Details</button>
-                    </div>
-                `);
-                markers.push({ id: school.id, marker });
-            });
-        }
-
-        // Render School List for Map Section
-        function renderSchoolListMap() {
-            const container = document.getElementById('schoolListMap');
-            container.innerHTML = schools.map(school => `
-                <div class="bg-gray-50 p-4 rounded-lg hover:bg-blue-50 transition cursor-pointer" onclick="focusOnMap(${school.lat}, ${school.lng})">
-                    <h4 class="font-bold text-gray-800">${school.name}</h4>
-                    <p class="text-sm text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>${school.location}</p>
-                </div>
-            `).join('');
-        }
-
-        // Focus on Map Location
-        function focusOnMap(lat, lng) {
-            map.setView([lat, lng], 15);
-            document.getElementById('sitemap').scrollIntoView({ behavior: 'smooth' });
-            // Open the popup
-            markers.forEach(m => {
-                const markerLatLng = m.marker.getLatLng();
-                if (markerLatLng.lat === lat && markerLatLng.lng === lng) {
-                    m.marker.openPopup();
-                }
-            });
-        }
-
-        // Get Current Location
-        function getCurrentLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const userLat = position.coords.latitude;
-                        const userLng = position.coords.longitude;
-                        
-                        // Add user marker
-                        const userIcon = L.divIcon({
-                            html: '<i class="fas fa-user-circle text-blue-600 text-3xl"></i>',
-                            className: 'user-marker',
-                            iconSize: [30, 30]
-                        });
-                        L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
-                            .bindPopup('You are here!').openPopup();
-                        
-                        map.setView([userLat, userLng], 12);
-                        
-                        // Show nearby schools alert
-                        alert('Showing schools near your location. The map has been centered on your position.');
-                    },
-                    (error) => {
-                        alert('Unable to get your location. Please enable location services.');
-                    }
-                );
-            } else {
-                alert('Geolocation is not supported by your browser.');
-            }
-        }
-
-        // Show School Details Modal
-        function showSchoolDetails(id) {
-            const school = schools.find(s => s.id === id);
-            if (!school) return;
-            
-            const modal = document.getElementById('schoolModal');
-            const content = document.getElementById('modalContent');
-            
-            content.innerHTML = `
-                <div class="relative">
-                    <button onclick="closeModal()" class="absolute top-0 right-0 text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <img src="${school.image}" alt="${school.name}" class="w-full h-64 object-cover rounded-xl mb-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-3xl font-bold text-gray-800">${school.name}</h2>
-                        <span class="bg-blue-600 text-white px-4 py-2 rounded-full">${school.type}</span>
-                    </div>
-                    <p class="text-gray-600 mb-6">${school.description}</p>
-                    
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-gray-50 p-4 rounded-xl">
-                            <h3 class="font-bold text-lg text-gray-800 mb-4"><i class="fas fa-info-circle text-blue-600 mr-2"></i>Basic Information</h3>
-                            <ul class="space-y-2 text-gray-600">
-                                <li><strong>Location:</strong> ${school.address}</li>
-                                <li><strong>Established:</strong> ${school.established}</li>
-                                <li><strong>Rating:</strong> ${school.rating}/5 ${getStarRating(school.rating)}</li>
-                                <li><strong>Board:</strong> ${school.type}</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-xl">
-                            <h3 class="font-bold text-lg text-gray-800 mb-4"><i class="fas fa-users text-blue-600 mr-2"></i>Capacity & Intake</h3>
-                            <div class="text-center">
-                                <div class="text-4xl font-bold text-blue-600">${school.intake}</div>
-                                <div class="text-gray-600">Maximum Student Intake</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-4 rounded-xl mb-6">
-                        <h3 class="font-bold text-lg text-gray-800 mb-4"><i class="fas fa-check-circle text-green-600 mr-2"></i>Facilities Available</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="text-center p-4 ${school.library ? 'bg-green-100' : 'bg-red-100'} rounded-lg">
-                                <i class="fas fa-book text-2xl ${school.library ? 'text-green-600' : 'text-red-400'} mb-2"></i>
-                                <p class="font-semibold ${school.library ? 'text-green-700' : 'text-red-500'}">Library</p>
-                                <p class="text-sm ${school.library ? 'text-green-600' : 'text-red-400'}">${school.library ? 'Available' : 'Not Available'}</p>
-                            </div>
-                            <div class="text-center p-4 ${school.canteen ? 'bg-green-100' : 'bg-red-100'} rounded-lg">
-                                <i class="fas fa-utensils text-2xl ${school.canteen ? 'text-green-600' : 'text-red-400'} mb-2"></i>
-                                <p class="font-semibold ${school.canteen ? 'text-green-700' : 'text-red-500'}">Canteen</p>
-                                <p class="text-sm ${school.canteen ? 'text-green-600' : 'text-red-400'}">${school.canteen ? 'Available' : 'Not Available'}</p>
-                            </div>
-                            <div class="text-center p-4 ${school.boarding ? 'bg-green-100' : 'bg-red-100'} rounded-lg">
-                                <i class="fas fa-bed text-2xl ${school.boarding ? 'text-green-600' : 'text-red-400'} mb-2"></i>
-                                <p class="font-semibold ${school.boarding ? 'text-green-700' : 'text-red-500'}">Boarding</p>
-                                <p class="text-sm ${school.boarding ? 'text-green-600' : 'text-red-400'}">${school.boarding ? 'Available' : 'Not Available'}</p>
-                            </div>
-                            <div class="text-center p-4 bg-green-100 rounded-lg">
-                                <i class="fas fa-football-ball text-2xl text-green-600 mb-2"></i>
-                                <p class="font-semibold text-green-700">Sports</p>
-                                <p class="text-sm text-green-600">${school.sports.length} Options</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 p-4 rounded-xl mb-6">
-                        <h3 class="font-bold text-lg text-gray-800 mb-4"><i class="fas fa-running text-orange-600 mr-2"></i>Sports Options Available</h3>
-                        <div class="flex flex-wrap gap-2">
-                            ${school.sports.map(sport => `<span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full">${sport}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <button onclick="downloadBrochure(${school.id})" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                            <i class="fas fa-download mr-2"></i>Download Brochure
-                        </button>
-                        <button onclick="focusOnMap(${school.lat}, ${school.lng}); closeModal();" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
-                            <i class="fas fa-map-marker-alt mr-2"></i>View on Map
-                        </button>
-                        <button onclick="closeModal()" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
-                            <i class="fas fa-times mr-2"></i>Close
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            modal.classList.add('active');
-        }
-
-        // Close Modal
-        function closeModal() {
-            document.getElementById('schoolModal').classList.remove('active');
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('schoolModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Download Brochure (Simulated)
-        function downloadBrochure(id) {
-            const school = schools.find(s => s.id === id);
-            if (!school) return;
-            
-            // Create a sample document content
-            const content = `
-${school.name} - School Brochure
-================================
-
-About Us:
-${school.description}
-
-Location: ${school.address}
-Established: ${school.established}
-Board: ${school.type}
-Rating: ${school.rating}/5
-
-Maximum Intake Capacity: ${school.intake} students
-
-FACILITIES:
-- Library: ${school.library ? 'Available' : 'Not Available'}
-- Canteen: ${school.canteen ? 'Available' : 'Not Available'}
-- Boarding: ${school.boarding ? 'Available' : 'Not Available'}
-
-SPORTS AVAILABLE:
-${school.sports.join(', ')}
-
-For more information, please visit our school or contact us.
-
-© ${new Date().getFullYear()} ${school.name}
-            `;
-            
-            // Create and download file
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${school.name.replace(/\s+/g, '_')}_Brochure.txt`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            alert('Brochure downloaded successfully! In a real application, this would be a detailed Word document.');
-        }
-
-        // Search Schools
-        function searchSchools() {
-            const location = document.getElementById('searchLocation').value;
-            const facility = document.getElementById('searchFacility').value;
-            const type = document.getElementById('searchType').value;
-            
-            let filtered = schools;
-            
-            if (location) {
-                filtered = filtered.filter(s => s.location === location);
-            }
-            
-            if (facility) {
-                filtered = filtered.filter(s => {
-                    if (facility === 'library') return s.library;
-                    if (facility === 'canteen') return s.canteen;
-                    if (facility === 'boarding') return s.boarding;
-                    if (facility === 'sports') return s.sports.length > 0;
-                    return true;
-                });
-            }
-            
-            if (type) {
-                filtered = filtered.filter(s => s.type === type);
-            }
-            
-            renderSchools(filtered);
-            document.getElementById('schools').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Filter by Facility
-        function filterByFacility(facility) {
-            let filtered = schools.filter(s => {
-                if (facility === 'library') return s.library;
-                if (facility === 'canteen') return s.canteen;
-                if (facility === 'boarding') return s.boarding;
-                if (facility === 'sports') return s.sports.length > 0;
-                return true;
-            });
-            
-            renderSchools(filtered);
-            document.getElementById('schools').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Reset Filters
-        function resetFilters() {
-            document.getElementById('searchLocation').value = '';
-            document.getElementById('searchFacility').value = '';
-            document.getElementById('searchType').value = '';
-            renderSchools(schools);
-        }
-
-        // Contact Form
-        function setupContactForm() {
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
-            });
-        }
-
-        // Keyboard navigation for modal
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
+    
 </body>
 </html>
-
