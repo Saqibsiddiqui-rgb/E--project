@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admission Form</title>
+  <link rel="stylesheet" href="style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="nav">
+            <div class="m-nav">
+                <div class="logo">
+                    <img src="logo.png" class="logo-img">
+                </div>
+                    <div class="nav-links">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="schools.html">Schools</a>
+                            <a href="search.html">Search</a>
+                            <a href="map.html">Site Map</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                                  <!--Navigation bar End-->
+
+        <div class="gap"></div>
+
+  <h1 class="text-light text-center form-heading">Admission Form</h1>
+
+  <form action="#" method="post" class="admission-form bg-light">
+    <!-- ========= Student Information ========= -->
+    <h2 class="section-title">Student Information</h2>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="firstName">Student's First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+
+      <div class="field-group">
+        <label for="surname">Student's Surname</label>
+        <input type="text" id="surname" name="surname" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label>Gender</label>
+        <div class="inline-options">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="nationality">Nationality</label>
+        <select id="nationality" name="nationality" required>
+          <option value="">—Please choose an option—</option>
+          <option value="pakistani">Pakistani</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ========= Guardian Information ========= -->
+    <h2 class="section-title red">Guardian Information</h2>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="guardianName">Father's/Guardian's Name</label>
+        <input type="text" id="guardianName" name="guardianName" required>
+      </div>
+
+      <div class="field-group">
+        <label for="guardianCnic">Father's/Guardian's CNIC No</label>
+        <input type="text" id="guardianCnic" name="guardianCnic" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="occupation">Occupation</label>
+        <select id="occupation" name="occupation">
+          <option value="">—Please choose an option—</option>
+          <option value="job">Job</option>
+          <option value="business">Business</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="guardianMobile">Father's/Guardian's Mobile Number</label>
+        <input type="tel" id="guardianMobile" name="guardianMobile" required>
+      </div>
+    </div>
+
+    <!-- ========= Admission Information ========= -->
+    <h2 class="section-title red">Admission Information</h2>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="classRequired">In which class the admission is required</label>
+        <input type="text" id="classRequired" name="classRequired" required>
+      </div>
+
+      <div class="field-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label for="admissionDate">When is admission required?</label>
+        <input type="date" id="admissionDate" name="admissionDate">
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">SUBMIT INFORMATION</button>
+  </form>
+
+
+
+  <footer class="">
+        <div class="footer">
+            <p>© 2026 SchoolsInfo. All rights reserved. | Developed for Educational Purposes</p>
+        </div>
+    </footer>
+
+</body>
+</html>

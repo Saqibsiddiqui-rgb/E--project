@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find-Schools</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+      <div class="nav">
+            <div class="m-nav">
+                <div class="logo" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="logo.png" class="logo-img">
+                </div>
+                    <div class="nav-links" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="schools.html">Schools</a>
+                        <a href="search.html">Search</a>
+                        <a href="map.html">Site Map</a>
+                        <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="search-section">
+        <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">Search Schools</h1>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">Find schools based on location and facilities</p>
+
+
+        <div class="srch-result" style="display:none;">
+            <div class="result">
+                <div class="card border border-0 rounded-4 sch-card k-grammer rslt" style="width:400px; display:none;" data-board="BIEK" data-location="clifton" data-faci="library, canteen, boarding, sports">
+                    <img class="card-img-top" id="sch-img" src="k-grammer.jpg" alt="Card image" style="width:100%; height:200px; "><span class="badge bg-primary badge-cbse">BIEK</span>
+                <div class="card-body p-4">
+                    <h4 class="card-title">Karachi Grammer School</h4>
+                    <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  Khayaban-e-Saadi, Block 5 Clifton, Karachi, 75500, Pakistan</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>    4.8/5<br><br>
+                    <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-1"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+
+
+                <div class="card rounded-4 border border-0 sch-card rslt" style="width:400px; display:none;" data-board="BSEK" data-location="kalaBoard" data-faci="library, canteen, sports">
+                    <img class="card-img-top" id="sch-img" src="the-vision.jpg" alt="Card image" style="width:100%; height:200px;"><span class="badge bg-primary badge-cbse">BSEK</span>
+                <div class="card-body p-4">
+                    <h4 class="card-title">The Vision School</h4>
+                    <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  V5MM+48X, Begum Khursheed Rd, Darakhshan Society Kala Board, Karachi, Pakistan</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>    4.6/5<br><br>
+                    <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-2"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+
+
+                <div class="card rounded-4 border border-0 sch-card rslt" style="width:400px; display:none;" data-board="AKB" data-location="kalaBoard" data-faci="canteen, boarding, sports">
+                    <img class="card-img-top" id="sch-img" src="the-edu.jpg" alt="Card image" style="width:100%; height:200px;">
+                <div class="card-body p-4">
+                    <h4 class="card-title">The Educators Schools</h4>
+                    <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  Kala Board Stop N-5, Darakhshan Society, Karachi, Pakistan</p><span class="badge bg-primary badge-cbse">AKB</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>    4.4/5<br><br>
+                    <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-3"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+
+
+                <div class="card rounded-4 border border-0 sch-card rslt" style="width:400px; display:none;" data-board="BIEK" data-faci="library, sports" data-location="shah">
+                <img class="card-img-top" id="sch-img" src="the-smart.jpg" alt="Card image" style="width:100%; height:200px;"><span class="badge bg-primary badge-cbse">BIEK</span>
+            <div class="card-body p-4">
+                <h4 class="card-title">The Smart School</h4>
+                <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  2C B، 4, Block 2 Al Falah Society Shah Faisal Town, Karachi, Pakistan</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>    4.9/5<br><br>
+                <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-4"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+
+
+
+                <div class="card rounded-4 border border-0 sch-card rslt" style="width:400px; display:none;" data-board="IB" data-faci="library, canteen" data-location="malir">
+                <img class="card-img-top" id="sch-img" src="prince-aly.jpg" alt="Card image" style="width:100%; height:200px;"><span class="badge bg-primary badge-cbse">I B</span>
+            <div class="card-body p-4">
+                <h4 class="card-title">Prince Aly School</h4>
+                <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  243-main national highway, Muslimabad Malir City Ghazi Dawood Brohi Goth, Karachi, Pakistan</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>    4.5/5<br><br>
+                <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-5"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+
+
+
+
+                <div class="card rounded-4 border border-0 sch-card rslt" style="width:400px; display:none;" data-board="BSEK" data-location="quidabad" data-faci="canteen, sports">
+                <img class="card-img-top" id="sch-img" src="abbas-ali.jpg" alt="Card image" style="width:100%; height:200px;"><span class="badge bg-primary badge-cbse">BSEK</span>
+            <div class="card-body p-4">
+                <h4 class="card-title">Abbas Ali Memorial School</h4>
+                <p class="card-text"><i class="fa-solid fa-location-dot text-primary"></i>  Plot, 3,9 Noor housing Project, main ghost Gali, Karachi, 75120, Pakistan</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>    4.3/5<br><br>
+                <button class="btn btn-primary mdl-btn" data-bs-toggle="modal" data-bs-target="#modal-6"><i class="fa-solid fa-circle-info sch-info"></i>   View Details</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    
+
+
+        <div class="search-d" >
+            <div class="search">
+                <div class="search-detail">
+                    <p class="" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="300">All Locations</p>
+                    <select id="locationFilter" class="srch-select" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                        <option value="">All Locations</option>
+                        <option value="malir">Malir</option>
+                        <option value="shah">Shah Faisal</option>
+                        <option value="quidabad">Quidabad</option>
+                        <option value="clifton">Clifton</option>
+                        <option value="kalaBoard">Kala Board</option>
+                    </select>
+                </div>
+                <div class="search-detail">
+                        <p data-aos="zoom-in" data-aos-duration="900" data-aos-delay="500">All Facilities</p>
+                    <select id="facilityFilter" class="srch-select" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="300">
+                        <option value="">All Facilities</option>
+                        <option value="library">Library</option>
+                        <option value="canteen">Canteen</option>
+                        <option value="boarding">Boarding</option>
+                        <option value="sports">Sports complex</option>
+                    </select>
+                </div>
+                <div class="search-detail">
+                    <p data-aos="zoom-in" data-aos-duration="900" data-aos-delay="300">School Type</p>
+                        <select id="boardFilter" class="srch-select" data-aos="fade-left" data-aos-duration="1700" data-aos-delay="300">
+                            <option value="">All Types</option>
+                            <option value="BSEK">BSEK</option>
+                            <option value="BIEK">BIEK</option>
+                            <option value="IB">IB</option>
+                            <option value="AKB">AKB</option>
+                        </select>
+                </div>
+                <div class="search-detail">
+                  <button class="srch-btn" onclick="searchSchool()" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="400">
+                    <i class="fa-solid fa-magnifying-glass btn-icon"></i>Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form-btn"><a href="form.html" class="btn-admission">ENROL NOW</a></div>
+
+    
+
+    <footer class="text-center">
+        <div class="footer">
+            <p>© 2026 SchoolsInfo. All rights reserved. | Developed for Educational Purposes</p>
+        </div>
+    </footer>
+
+
+
+
+    <div class="modal fade modal-1" id="modal-1" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative" style="background-image:url('k-grammer.jpg');">
+        <span class="badge bg-primary badge-cbse">BIEK</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-1">
+
+        <h3 class="fw-bold mt-3">Karachi Grammer School</h3>
+        <p class="text-muted">
+          Karachi Grammer School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> Khayaban-e-Saadi, Block 5 Clifton, Karachi, 75500, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF1()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative"
+           style="background-image:url('the-vision.jpg');">
+        <span class="badge bg-primary badge-cbse">BSEK</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-2">
+
+        <h3 class="fw-bold mt-3">The Vision School</h3>
+        <p class="text-muted">
+          The Vision School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> V5MM+48X, Begum Khursheed Rd, Darakhshan Society Kala Board, Karachi, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF2()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-3" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative"
+           style="background-image:url('the-edu.jpg');">
+        <span class="badge bg-primary badge-cbse">AKB</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-3">
+
+        <h3 class="fw-bold mt-3">The Educators School</h3>
+        <p class="text-muted">
+          The Educators School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> Kala Board Stop N-5, Darakhshan Society, Karachi, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF3()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-4" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative"
+           style="background-image:url('the-smart.jpg');">
+        <span class="badge bg-primary badge-cbse">BIEK</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-4">
+
+        <h3 class="fw-bold mt-3">The Smart School</h3>
+        <p class="text-muted">
+          The Smart School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> 2C B، 4, Block 2 Al Falah Society Shah Faisal Town, Karachi, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF4()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-5" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative"
+           style="background-image:url('prince-aly.jpg');">
+        <span class="badge bg-primary badge-cbse">IB</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-5">
+
+        <h3 class="fw-bold mt-3">Prince Aly School</h3>
+        <p class="text-muted">
+          Prince Aly School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> 243-main national highway, Muslimabad Malir City Ghazi Dawood Brohi Goth, Karachi, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF5()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-6" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-3">
+
+      <!-- Image -->
+      <div class="modal-header-img position-relative"
+           style="background-image:url('abbas-ali.jpg');">
+        <span class="badge bg-primary badge-cbse">BSEK</span>
+        <button class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body mdl-6">
+
+        <h3 class="fw-bold mt-3">Abbas Ali Memorial School</h3>
+        <p class="text-muted">
+          Abbas Ali Memorial School provides quality education following CBSE curriculum with emphasis on holistic development.
+        </p>
+
+        <div class="row g-3 mt-2">
+          <!-- Basic Info -->
+          <div class="col-md-6">
+            <div class="info-box">
+              <h6 class="fw-bold">
+                <i class="bi bi-info-circle-fill text-primary"></i> Basic Information
+              </h6>
+              <p class="mb-1"><strong>Location:</strong> Plot, 3,9 Noor housing Project, main ghost Gali, Karachi, 75120, Pakistan</p>
+              <p class="mb-1"><strong>Established:</strong> 1992</p>
+              <p class="mb-1"><strong>Rating:</strong> 4.6/5 ⭐⭐⭐⭐☆</p>
+              <p class="mb-0"><strong>Board:</strong> BSEK</p>
+            </div>
+          </div>
+
+          <!-- Capacity -->
+          <div class="col-md-6">
+            <div class="info-box text-center">
+              <h6 class="fw-bold">
+                <i class="bi bi-people-fill text-primary"></i> Capacity & Intake
+              </h6>
+              <h1 class="fw-bold text-primary mb-0">2000</h1>
+              <small class="text-muted">Maximum Student Intake</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilities -->
+        <div class="mt-4">
+          <h6 class="fw-bold text-success">
+            <i class="bi bi-check-circle-fill"></i> Facilities Available
+          </h6>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-book fs-3"></i><br>
+                Library<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-cup-straw fs-3"></i><br>
+                Canteen<br><small>Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility not-available">
+                <i class="bi bi-house-door fs-3"></i><br>
+                Boarding<br><small>Not Available</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="facility available">
+                <i class="bi bi-dribbble fs-3"></i><br>
+                Sports<br><small>4 Options</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success bg-primary border-0" onclick="downloadPDF6()">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
